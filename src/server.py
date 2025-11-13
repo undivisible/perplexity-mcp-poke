@@ -7,10 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Initialize FastMCP server
 mcp = FastMCP("Perplexity Search MCP Server")
 
-# Your Perplexity API key
+# Perplexity API key
 PERPLEXITY_API_KEY = os.getenv("PERPLEXITY_API_KEY")
 
 @mcp.tool(description="Search using Perplexity Search API with web search capability. Returns ranked search results with URLs, titles, snippets, and extracted content.")
@@ -176,7 +175,7 @@ def fetch_webpage_content(url: str) -> dict:
         return {
             "status": "success",
             "url": url,
-            "content": main_content[:5000],  # First 5000 chars
+            "content": main_content[:5000], 
             "content_length": len(main_content),
             "status_code": response.status_code
         }
