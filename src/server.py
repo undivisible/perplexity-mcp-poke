@@ -195,8 +195,7 @@ if __name__ == "__main__":
     print(f"Starting Perplexity MCP server on {host}:{port}")
     
     mcp.run(
-        transport="http",
+        transport="sse",
         host=host,
-        port=port,
-        stateless_http=True
+        port=port
     )
